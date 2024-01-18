@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus&family=Work+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <title>Book Notes</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logosec">
+            <i class='material-icons'>auto_stories</i>
+            <a href="/">
+                <p>Home</p>
+            </a>
+            <a href="https://tusharthexd.github.io/portfolio.html/" target="_blank">
+                <p>About</p>
+            </a>
+        </div>
+        <div class="searchsec">
+            <input id="search" onchange="fetchapi()" placeholder="Find Book" type="text">
+            <button onclick="fetchapi()"><i class="material-icons">search</i></button>
+
+            <div id="dropdown">
+                <div class="loader"></div>
+                <button onclick="closeDropdown()"><i class='material-icons'>close</i></button>
+                <ul class="listSec"></ul>
+            </div>
+        </div>
+    </nav>

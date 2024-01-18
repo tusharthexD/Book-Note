@@ -1,0 +1,72 @@
+<%- include('partials/header.ejs') %>
+
+<form method="post" class="order" action="/order">
+    <label for="order">Order:</label>
+    <select name="order" id="order" >
+        <% if (order == 'id') { %>
+            <option value="id">ID</option>
+            <option value="title">Title</option>
+        <% } else{%>
+            <option value="title">Title</option>
+            <option value="id">ID</option>
+
+            <% } %>
+    </select>
+    <button><i class='material-icons'>navigate_next</i></button>
+  </form>
+
+    <div id="bookSec">
+        <% result.forEach(e=> { %>
+            <div id="book">
+                <form action="/delete" method="post" class="bookData book<%= e.id %>">
+                    <img src="https://covers.openlibrary.org/b/isbn/<%= e.isbn %>-M.jpg" alt="" srcset="">
+                    <div>
+                        <h3>
+                            <%= e.title %>
+                        </h3>
+                        <p>
+                            <%= e.description %>
+                        </p>
+                        <p>ISBN: <%= e.isbn %>
+                        </p>
+                        <p>
+                            <% for( let i=0; i < e.rating; i++ ) { %>
+                                <span class="fa fa-star checked"></span>
+                                <% } %>
+                        </p>
+
+                        <input type="hidden" name="isbn" value="<%= e.isbn %>">
+                        <div class="bookbutton">
+                            <button type="button" onclick="editBook('<%= e.id %>')">
+                                <i class='material-icons'>edit</i></button>
+                            <button type="submit">
+                                <i class='material-icons'>delete</i></button>
+                        </div>
+                    </div>
+                </form>
+                <form class="bookEdit edit<%= e.id %> " action="/edit" method="post">
+                    <label >Title</label>
+                    <input class="inp" required type="text" name="title" value="<%= e.title %>">
+                    <label >Description</label>
+                    <textarea class="inp" name="description" value="<%= e.description %>" maxlength="150" rows="3"></textarea>
+                    <input required type="hidden" name="id" value="<%= e.id%>">
+                    <label >ISBN</label>
+                    <input class="inp" required type="text" name="isbn" value="<%= e.isbn %>">
+                    <label >Rating</label>
+                    <input class="inp" required type="text" name="rating" value="<%= e.rating %>">
+                    <div class="bookbutton" >
+                    <button type="button" onclick="closeEdit('<%= e.id %>')"><i
+                            class='material-icons'>clear</i></button></button>
+                    <button><i class='material-icons'>done</i></button>
+                </div>
+                </form>
+                <script>document.querySelector('textarea').value = "<%= e.description %>"</script>
+            </div>
+
+            <% }) %>
+<div class="footer"><p>© 2023 <a style="color: white;" target="_blank" href="https://www.techgrower.in">TechGrower</a>, Inc.</p></div>
+
+    </div>
+
+
+    <%- include('partials/footer.ejs') %>

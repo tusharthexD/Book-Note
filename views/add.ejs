@@ -1,0 +1,16 @@
+<%- include('partials/header.ejs') %>
+
+    <form id="main" action="/Submit" method="post">
+        <h1>ADD YOUR BOOK REVIEW</h1>
+        <img src="https://covers.openlibrary.org/b/isbn/<%= locals.isbn %>-S.jpg" alt="">
+        <input class="inp" name="title" placeholder="Title" value="<%= locals.title %>" type="text">
+        <textarea class="inp" name="description" placeholder="Description..." id="" rows="3"></textarea>
+        <span>
+            <input class="inp" name="ISBN" placeholder="Book ISBN" value="<%= locals.isbn %>" type="text">
+            <input class="inp" name="rating" placeholder="Rating" type="text">
+        </span>
+        <button type="submit">Submit</button>
+    </form>
+
+
+    <%- include('partials/footer.ejs') %>

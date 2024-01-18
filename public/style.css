@@ -1,0 +1,340 @@
+* {
+    font-family: 'Gentium Book Plus', serif;
+    padding: 0px 0px;
+    margin: 0px 0px;
+}
+html{
+    position: relative;
+    min-height: 100%;
+}
+body {
+    background-color: #391201;
+    background-image: url("https://www.transparenttextures.com/patterns/dark-wood.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+h1,h2,h3,h4{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: bold;
+}
+h3{
+    font-size: clamp(18px,5vw,24px);
+}
+a{
+ text-decoration: none;
+ color: black;
+}
+
+p{
+    font-size: clamp(15px, 3vw, 18px);
+}
+
+nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-height: 40px;
+    background-color: aliceblue;
+    align-items: center;
+    padding: 5px 10px;
+    gap: 10px;
+}
+
+@media(max-width: 600px){
+    nav{
+        flex-direction: column;
+        align-content: center;
+    }
+    
+}
+
+.logosec{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: black;
+    justify-content: center;
+}
+
+.searchsec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    height: 30px;
+    position: relative;
+}
+#search{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    height: 25px;
+    width: 80%;
+    padding-left: 5px;
+    border-right: 1px solid grey;
+
+}
+.searchsec>button{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: black;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+}
+#dropdown{
+    display: none;
+    max-width: 300px;
+    height: 300px;
+    min-width: 200px;
+    width: 30vw;
+    background-color: white;
+    position: absolute;
+    right: 10px;
+    bottom: -320px;
+    border-radius: 10px;
+    overflow-y: scroll;
+    z-index: 1;
+}
+#dropdown>button{
+    position: absolute;
+    right: 3px;
+    top: 8px;
+    background-color: #391201;
+    color: bisque;
+    border-radius: 5px;
+}
+
+ul{
+    width: 100%;
+}
+li{
+    margin-bottom: 5px;
+    display: flex;
+    gap: 5px;
+    position: relative;
+    padding: 10px 10px;
+    border-bottom: 2px solid black;
+}
+
+li>img {
+    height: 50px;
+    border-radius: 3px;
+    border: 1px solid grey;
+}
+li>div>p{
+  display: flex;
+  align-content: center;
+}
+li>div>button{
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    background-color: #391201;
+    color: bisque;
+    border-radius: 5px;
+}
+li>div>button>i{
+    color: bisque;
+}
+/* i{
+   scale: .9;
+} */
+button{
+    background-color: #391201;
+    color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.material-icons{
+    font-size: 22px;
+}
+
+#main {
+    background-color: #3E3232;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    grid-template-columns: 1fr;
+    position: absolute;
+    padding: 20px 20px;
+    gap: 10px;
+    top: 150px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+}
+
+#main>span {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 5px;
+    height: 100%;
+}
+
+#main>button {
+    background-color: bisque;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+#main>img{
+    width: 50px;
+}
+
+.inp {
+    background-color: bisque;
+    border: 2px black solid;
+    border-radius: 8px;
+    padding: 5px 5px;
+}
+#bookSec{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 500px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 80vh;
+    
+}
+#book{
+    flex-direction: column;
+    gap: 30px;
+    color: white;
+}
+
+.bookData{
+    position: relative;
+    display: flex;
+    gap: 20px;
+    min-height: 150px;
+    padding: 10px 10px;
+    border-bottom: 10px solid #3E3232;
+
+}
+.bookData>img{
+height: 30vw;
+max-height: 200px;
+}
+
+.bookData>div{ 
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    word-break: break-all;
+
+}
+.bookbutton{
+    display: flex;
+    gap: 8px;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+.bookbutton>button{
+    background-color: #391201;
+    color: wheat;
+    padding: 5px 5px;
+}
+.bookEdit{
+    display: none;
+    width: 95vw;
+    max-width: 300px;
+    position: relative;
+    flex-direction: column;
+}
+
+.checked{
+    color: orange;
+}
+
+.noresult{
+    margin-top: 60px;
+    text-align: center;
+}
+
+.order{
+    margin-top: 15px;
+    margin-left: 20px;
+    color: bisque;
+    display: flex;
+    gap: 5px;
+}
+
+select{
+    background-color: bisque;
+    border-radius: 5px;
+}
+
+/* loader */
+
+.loader {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid bisque;
+    border-radius: 50%;
+    border-top: 3px solid #391201;
+    width: 20px;
+    height: 20px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+
+  /* scroll bar */
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: white; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #4d4c4c; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4d4c4c; 
+  }
+
+  .footer{
+    color: white;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
