@@ -14,8 +14,10 @@ let order = "id";
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const connectionString = process.env.DB_URL
+
 const db = new Pool({
-connectionString: process.env.DB_URL,
+connectionString: connectionString,
 ssl:{
 rejectUnauthorized : false
 }
