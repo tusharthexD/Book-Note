@@ -5,18 +5,19 @@ import axios from "axios";
 
 const app = express();
 const port = 3000;
+const {Pool} = pg
 let order = "id";
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const db = new pg.Client({
-  user: "postgres",
-  database: "booknote",
-  port: 5432,
-  host: "localhost",
-  password: "Tushar@work",
-});
+const db = new Pool({
+connectionString:"postgres://tushar:WprKew1wlwtcZO8xg63triUcbMR7ry0z@dpg-cmknoo8l5elc738on76g-a.singapore-postgres.render.com/tushardb",
+ssl:{
+rejectUnauthorized : false
+}
+
+})
 
 db.connect();
 

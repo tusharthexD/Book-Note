@@ -16,7 +16,7 @@ async function fetchapi(event) {
 
   try {
     const response = await fetch(
-      `https://openlibrary.org/search.json?q=${search}&limit=5`
+      `https://openlibrary.org/search.json?q=${search}&limit=10`
     );
 
     const data = await response.json();
