@@ -2,6 +2,9 @@ import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
 import axios from "axios";
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const app = express();
 const port = 3000;
@@ -12,7 +15,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const db = new Pool({
-connectionString:"postgres://tushar:WprKew1wlwtcZO8xg63triUcbMR7ry0z@dpg-cmknoo8l5elc738on76g-a.singapore-postgres.render.com/tushardb",
+connectionString: process.env.DB_URL,
 ssl:{
 rejectUnauthorized : false
 }
