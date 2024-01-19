@@ -2,27 +2,26 @@ import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
 import axios from "axios";
-import dotenv from 'dotenv'
+import dotenv from "dotenv";
 
-dotenv.config()
+dotenv.config();
 
 const app = express();
 const port = 3000;
-const {Pool} = pg
+const { Pool } = pg;
 let order = "id";
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const connectionString = process.env.DB_URL
-
+const connectionString = process.env.DB_URL;
 const db = new Pool({
-connectionString: connectionString,
-ssl:{
-rejectUnauthorized : false
-}
-
-})
+  connectionString: connectionString,
+  // If you're using a service like Heroku, you might need this for SSL:
+  ssl: {
+    rejectUnauthorized: false,
+  },
+});
 
 db.connect();
 
