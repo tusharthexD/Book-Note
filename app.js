@@ -14,7 +14,7 @@ let order = "id";
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const connectionString = process.env.DB_URL;
+const connectionString = "postgres://tushar:WprKew1wlwtcZO8xg63triUcbMR7ry0z@dpg-cmknoo8l5elc738on76g-a.singapore-postgres.render.com/tushardb";
 const db = new Pool({
   connectionString: connectionString,
   // If you're using a service like Heroku, you might need this for SSL:
